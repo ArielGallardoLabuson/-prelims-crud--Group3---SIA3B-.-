@@ -1,4 +1,8 @@
 <?php
-$connection = mysqli_connect('localhost', 'root', '', 'SIA_crud_database');
+$host = 'localhost';
+$user = 'root';
+$password = '';
+$database = 'SIA_crud_database';
+$connection = mysqli_connect( $host, $user, $password, $database);
 ?>
 
