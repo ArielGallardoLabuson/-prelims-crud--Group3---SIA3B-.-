@@ -1,6 +1,10 @@
 <?php
 include('createData.php');
 include('readData.php');
+include('deleteData.php');
+include('updateData.php');
+
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +20,35 @@ include('readData.php');
 
 <body>
     <div class="main">
+<div class="updatebox">
+    <div class="crud_update_box">
+            <div class="header">
+                <h1>CRUD System Integration (PHP + MySQL)</h1>
+            </div>
+            <form action="" method="post">
+                <h2>Update Account</h2>
+                <div class="name">
+                <input type="text" class="id" name="id" placeholder="Enter first name">
+                    
+                <input type="text" class="updatefirstname" name="updatefirstname" placeholder="Enter first name">
+                                </div>
+                <div class="contactinfo">
+                    <input type="text" class="updateage" name="updateage" placeholder="Enter Age">
+                    <input type="number" class="updatecontact" name="updatecontact" placeholder="Enter Contact Number">
+                    <input type="email" class="updateemail" name="updateemail" placeholder="Enter email">
+                </div>
+                <div class="gender">
+
+                    <input type="radio" class="inputgender" name="updateinputgender" value="Male" checked>
+                    <label for="male">Male</label>
+                    <input type="radio" class="inputgender" name="updateinputgender" value="female">
+                    <label for="Female">Female</label>
+                </div>
+                <button type="submit" class="updatebtn" name="updatebtn">Update</button>
+            </form>
+        </div>
+        </div>
+
         <div class="crud_create_box">
             <div class="header">
                 <h1>CRUD System Integration (PHP + MySQL)</h1>
@@ -24,6 +57,7 @@ include('readData.php');
                 <h2>Create Account</h2>
                 <div class="name">
                     <input type="text" class="inputname" name="firstname" placeholder="Enter first name">
+
                     <input type="text" class="inputname" name="lastname" placeholder="Enter last name">
                 </div>
                 <div class="contactinfo">
@@ -38,8 +72,8 @@ include('readData.php');
                     <input type="radio" class="inputgender" name="inputgender" value="female">
                     <label for="Female">Female</label>
                 </div>
-                    <button type="submit" class="createbtn" name="createbtn">Create</button>
-                </form>
+                <button type="submit" class="createbtn" name="createbtn">Create</button>
+            </form>
         </div>
 
         <table>
@@ -49,29 +83,44 @@ include('readData.php');
                 <th>Contact Number</th>
                 <th>Email</th>
                 <th>Gender</th>
+                <th>Option</th>
             </tr>
             <?php while ($result = mysqli_fetch_array($sqlresult)) { ?>
-            <tr>
+                <tr>
+                <td class="hide">
+                        <?php echo $result['id']; ?>
+                    </td>
+                    <td>
+                        <?php echo $result['name']; ?>
+                    </td>
+                    <td>
+                        <?php echo $result['age']; ?>
+                    </td>
+                    <td>
+                        <?php echo $result['contact_number']; ?>
+                    </td>
+                    <td>
+                        <?php echo $result['email_address']; ?>
+                    </td>
+                    <td>
+                        <?php echo $result['gender']; ?>
+                    </td>
+                    <td>
 
-                <td>
-                    <?php echo $result['name']; ?>
-                </td>
-                <td>
-                    <?php echo $result['age']; ?>
-                </td>
-                <td>
-                    <?php echo $result['contact_number']; ?>
-                </td>
-                <td>
-                    <?php echo $result['email_address']; ?>
-                </td>
-                <td>
-                    <?php echo $result['gender']; ?>
-                </td>
-                <?php } ?>
+                        <form action="" method="post">
+                        <input type="hidden" name="deletedata"  value="<?php echo $result['name']; ?>">
+                            <button type="submit"  class="delete" name="deletebtn">Delete</button>
+                        </form>
+                        <button  class="update">Update</button>
+                    </td>
+                <?php
+            } ?>
+
             </tr>
         </table>
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="../script/script.js"></script>
 
 </html>

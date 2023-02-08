@@ -8,8 +8,8 @@ input{
 }
 .main{
     width: 100vw;
-    height: 150vh;
-    background-color: rgb(161, 158, 158);
+    height: 100vh;
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,6 +22,7 @@ height: 400px;
 background-color: white;   
 border-radius: 10px; 
 margin-inline: 40px;
+overflow: auto;
 }
 table {
     width: 70%;
@@ -117,4 +118,31 @@ button{
     background-color: black;
     color: white;
     cursor: pointer;
+}
+.crud_update_box{
+    width: 50%;
+height: 400px;
+background-color: white;   
+border-radius: 10px; 
+margin-inline: 40px;
+overflow: auto;
+
+}
+.updatebox{
+    width: 100vw;
+    height: 150vh;
+    background-color: rgba(102, 107, 107, 0.5);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.delete, .update{
+    width: 70px;
+    height: 30px;
+    font-size: 12px;
+}
+.hide{
+display: none;
 }
