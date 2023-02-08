@@ -28,7 +28,7 @@ session_start();
             <form action="" method="post">
                 <h2>Update Account</h2>
                 <div class="name">
-                <input type="text" class="id" name="id" placeholder="Enter first name">
+                <input type="hidden" class="id" name="id" placeholder="Enter first name">
                     
                 <input type="text" class="updatefirstname" name="updatefirstname" placeholder="Enter first name">
                                 </div>
