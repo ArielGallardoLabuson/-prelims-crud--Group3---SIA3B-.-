@@ -20,33 +20,37 @@ session_start();
 
 <body>
     <div class="main">
-<div class="updatebox">
-    <div class="crud_update_box">
-            <div class="header">
-                <h1>CRUD System Integration (PHP + MySQL)</h1>
-            </div>
-            <form action="" method="post">
-                <h2>Update Account</h2>
-                <div class="name">
-                <input type="hidden" class="id" name="id" placeholder="Enter first name">
-                    
-                <input type="text" class="updatefirstname" name="updatefirstname" placeholder="Enter first name">
-                                </div>
-                <div class="contactinfo">
-                    <input type="text" class="updateage" name="updateage" placeholder="Enter Age">
-                    <input type="number" class="updatecontact" name="updatecontact" placeholder="Enter Contact Number">
-                    <input type="email" class="updateemail" name="updateemail" placeholder="Enter email">
+        <div class="updatebox">
+            <div class="crud_update_box">
+                <div class="header">
+                    <h1>CRUD System Integration (PHP + MySQL)</h1>
                 </div>
-                <div class="gender">
+                <form action="" method="post">
+                    <h2>Update Account</h2>
+                    <div class="name">
+                        <input type="hidden" class="id" name="id" placeholder="Enter first name">
 
-                    <input type="radio" class="inputgender" name="updateinputgender" value="Male" checked>
-                    <label for="male">Male</label>
-                    <input type="radio" class="inputgender" name="updateinputgender" value="female">
-                    <label for="Female">Female</label>
-                </div>
-                <button type="submit" class="updatebtn" name="updatebtn">Update</button>
-            </form>
-        </div>
+                        <input type="text" class="updatefirstname" name="updatefirstname"
+                            placeholder="Enter first name">
+                    </div>
+                    <div class="contactinfo">
+                        <input type="text" class="updateage" name="updateage" placeholder="Enter Age">
+                        <input type="number" class="updatecontact" name="updatecontact"
+                            placeholder="Enter Contact Number">
+                        <input type="email" class="updateemail" name="updateemail" placeholder="Enter email">
+                    </div>
+                    <div class="gender">
+
+                        <input type="radio" class="inputgender" name="updateinputgender" value="Male" checked>
+                        <label for="male">Male</label>
+                        <input type="radio" class="inputgender" name="updateinputgender" value="female">
+                        <label for="Female">Female</label>
+                    </div>
+                    <button type="submit" class="updatebtn" name="updatebtn">Update</button>
+                   
+                </form>
+
+            </div>
         </div>
 
         <div class="crud_create_box">
@@ -87,7 +91,7 @@ session_start();
             </tr>
             <?php while ($result = mysqli_fetch_array($sqlresult)) { ?>
                 <tr>
-                <td class="hide">
+                    <td class="hide">
                         <?php echo $result['id']; ?>
                     </td>
                     <td>
@@ -108,12 +112,12 @@ session_start();
                     <td>
 
                         <form action="" method="post">
-                        <input type="hidden" name="deletedata"  value="<?php echo $result['name']; ?>">
-                            <button type="submit"  class="delete" name="deletebtn">Delete</button>
+                            <input type="hidden" name="deletedata" value="<?php echo $result['name']; ?>">
+                            <button type="submit" class="delete" name="deletebtn">Delete</button>
                         </form>
-                        <button  class="update">Update</button>
+                        <button class="update">Update</button>
                     </td>
-                <?php
+                    <?php
             } ?>
 
             </tr>

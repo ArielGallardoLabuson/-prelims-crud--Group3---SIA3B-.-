@@ -11,7 +11,7 @@ if(isset($_POST['updatebtn'])){
 
     $sql = "UPDATE sia_crud_table SET `name`='{$firstname}',`age`='$age',`contact_number`='{$contact}',`email_address`='{$email}',`gender`='{$gender}' WHERE `id` = '{$id}'";
     $query = mysqli_query($connection, $sql);
-    //echo ' <script> window.location.href=("http://localhost/CRUD%20System%20Integration%20(PHP%20+%20MySQL)/app/php/CRUD_page.php")</script>';
+    echo ' <script> window.location.href=("http://localhost/CRUD%20System%20Integration%20(PHP%20+%20MySQL)/app/php/CRUD_page.php")</script>';
     
 
 
